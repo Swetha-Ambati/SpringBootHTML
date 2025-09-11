@@ -1,6 +1,15 @@
-package com.example.springNoothtml.Model;
+package com.example.springBoothtml.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String fname;
 	private String lname;
 	private String email;
@@ -11,8 +20,8 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "Model [fname=" + fname + ", lname=" + lname + ", email=" + email + ", dob=" + dob + ", gender=" + gender
-				+ "]";
+		return "User [id=" + id + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", dob=" + dob
+				+ ", gender=" + gender + "]";
 	}
 	public String getFname() {
 		return fname;
@@ -43,6 +52,12 @@ public class User {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 

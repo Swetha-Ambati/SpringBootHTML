@@ -1,15 +1,23 @@
 package com.example.springBoothtml.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.springNoothtml.Model.User;
+import com.example.springBoothtml.Model.User;
+import com.example.springBoothtml.service.UserService;
 
 @Controller
 public class IndexController {
+	
+	@Autowired
+	private UserService userService;
+	
+	
+	
 	
 	@GetMapping("/")
 	public String index() {
@@ -25,6 +33,7 @@ public class IndexController {
 		System.out.println(user.getDob());
 		model.addAttribute("firstname",user.getFname());
 		model.addAttribute("lastname",user.getLname());
+		userService.save(user);
 		return "welcome";
 	}
 
