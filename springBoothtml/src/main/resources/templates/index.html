@@ -7,26 +7,17 @@
 </head>
 
 <body>
-	<h1>Learning SpringBoot with html form -user input</h1>
-	<form action ="register" method = "post">
-	<label form="firstname">First name : </label> <br />
-	<input type="text" name="fname"> <br />
-	<label form="lastname">Last name : </label> <br />
-	<input type="text" name="lname"> <br />
-	<label form="email">Email : </label> <br />
-	<input type="text" name="email"> <br />
-	<label form="dob">DOB : </label> <br />
-	<input type="date" name="dob"> <br />
-	<label form="password">Password : </label> <br />
-	<input type="password" name="password"> <br />
-	<label form="gender">Gender : </label> <br />
-	<select name = "gender">
-		<option value =""></option>
-		<option value ="female">Female</option>
-		<option value = "male">Male</option>		
+	<h1>User Registration Form</h1>
+	<h2>Please select Login/SignUp</h2>
+	<form action ="home" method = "post">
+	<label form="select">New Registration : </label> <br />
+	<select name = "status">
+		<option value ="select">Select</option>
+		<option value ="login">Login</option>
+		<option value = "signup">SignUp</option>		
 	</select>
 	<br/>
-	<button type = "submit">Submit</button>
+	<button type = "submit">Submit</button>	
 	</form>
 	</body>
 </html>
